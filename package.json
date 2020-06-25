@@ -1,0 +1,8 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@stomp/stompjs": "^5.4.4"
+  }
+}

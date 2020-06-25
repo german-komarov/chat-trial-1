@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Registration</title>
+</head>
+<div align="right">
+    <a href="/">Main Page</a>
+</div>
+<body>
+
+<form action="/registration" method="post">
+    <h2>Registration</h2>
+
+
+    <input name="username" type="text"  placeholder="Username">
+    <br>
+    <input name="password" type="password"  placeholder="Password">
+    <br>
+    <input name="passwordConfirm" type="password" placeholder="Confirm password">
+    <input type="submit" value="Submit">
+</form>
+<a href="/login">Login in</a>
+</body>
+</html>
