@@ -15,6 +15,7 @@ public class HelloMessage {
 
     private String sender;
     private String receiver;
+    private String roomId;
     private String message;
 
     public HelloMessage() {
@@ -50,5 +51,14 @@ public class HelloMessage {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
     }
 }

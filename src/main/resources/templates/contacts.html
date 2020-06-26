@@ -7,8 +7,11 @@
 <body>
 
 <div th:each="contact : ${contacts}">
-    <a th:href="@{'/chat/'+${contact.username}}" th:text="${contact.username}"></a>
-    <br>
+    <div th:if="${contact.username}!=${username}">
+        <a th:if="${contact.username}!=${username}" th:href="@{'/chat/'+${contact.username}}" th:text="${contact.username}"></a>
+        <br>
+    </div>
+
 </div>
 
 </body>

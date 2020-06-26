@@ -21,8 +21,12 @@ public class GreetingController {
     @MessageMapping("/hello")
     public void greeting(HelloMessage message) throws Exception {
         helloMessageRepository.save(message);
-        simpMessagingTemplate.convertAndSendToUser(message.getSender(),"/topic/greetings",new Greeting("<b>"+message.getSender()+"</b> : "+message.getMessage()));
-        simpMessagingTemplate.convertAndSendToUser(message.getReceiver(),"/topic/greetings",new Greeting("<b>"+message.getSender()+"</b> : "+message.getMessage()));
+        simpMessagingTemplate.convertAndSend
+                (
+                "/topic/greetings/"+message.getRoomId(),
+                new Greeting("<b>"+message.getSender()+" :</b> "+message.getMessage())
+                );
+
     }
 
 }

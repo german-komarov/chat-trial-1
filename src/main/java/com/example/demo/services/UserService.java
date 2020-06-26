@@ -12,14 +12,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserService implements UserDetailsService {
-    @PersistenceContext
+    @Autowired
     private EntityManager entityManager;
     @Autowired
     UserRepository userRepository;
@@ -50,12 +49,11 @@ public class UserService implements UserDetailsService {
         return userRepository.findAll();
     }
 
-    public boolean saveUser(Users users) {
+    public void saveUser(Users users) {
 
         users.setPassword(passwordEncoder.encode(users.getPassword()));
         users.setRoles(Collections.singleton(new Role(1L,"ROLE_USER")));
         userRepository.save(users);
-        return true;
     }
 
     public boolean deleteUser(long userId) {

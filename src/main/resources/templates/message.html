@@ -4,7 +4,6 @@
     <head>
         <title>Hello WebSocket</title>
         <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/main.css" rel="stylesheet">
         <script src="/webjars/jquery/jquery.min.js"></script>
         <script src="/webjars/sockjs-client/sockjs.min.js"></script>
         <script src="/webjars/stomp-websocket/stomp.min.js"></script>
@@ -40,6 +39,8 @@
             <input type="hidden" id="sender" class="form-control" th:field="*{sender}">
             <label for="receiver"></label>
             <input type="hidden" id="receiver" class="form-control" th:field="*{receiver}">
+            <label for="roomId"></label>
+            <input type="hidden" id="roomId" class="form-control" th:field="*{roomId}">
             <label for="message"></label>
             <input type="text" th:field="*{message}" id="message" class="form-control" placeholder="Your message">
         </div>
